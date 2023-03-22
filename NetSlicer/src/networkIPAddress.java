@@ -29,6 +29,10 @@ public class networkIPAddress {
 		}
 	}
 	
+	public int[] getNetIpOctet() {
+		return netIpOctet;
+	}
+	
 	public IPAddress getEnteredIp() {
 		return enteredIp;
 	}
@@ -76,10 +80,14 @@ public class networkIPAddress {
 		this.numberOfHosts=(int)Math.pow(2,(32-this.enteredIp.getPrefix()))-2;
 	}
 	
+	public int getPrefix() {
+		return enteredIp.getPrefix();
+	}
+	
 	public String toString() {
 		// returns a string representation of an object (Network IP address) 
 		String str="Entered IP address: "+this.getEnteredIp();
-		str+="\nNetwork Ip address :"+this.netIp+"/"+this.enteredIp.getPrefix();
+		str+="\nNetwork Ip address :"+this.netIp+"/"+this.getPrefix();
 		str+="\nSubnet mask: "+this.enteredIp.getSubnetMaskStr();
 		str+="\nNumber of Hosts :"+this.numberOfHosts;
 		str+="\nBorad Cast Ip Address :"+this.boradCastIpAddress;
