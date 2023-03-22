@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /***
@@ -28,7 +29,10 @@ public class MainClass {
 		}
 		networkIPAddress netIP=new networkIPAddress(new IPAddress(readIp));
 		System.out.println(netIP);
-			
+		
+		
+		ArrayList<String> subnets=new NetSegmentation(new FixedHostSubnettingStrategy()).applySubnet(netIP);	
+		
 		in.close();
 	}
 

@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 
 public class FixedNetworkSubnettingStrategy implements SubnettingStrategy{
-	public void Subnet() {
-		
+	public ArrayList<String> Subnet(networkIPAddress netIp) {
+		ArrayList<String> temp=new ArrayList<String>();
+		return temp;
 	}
 }

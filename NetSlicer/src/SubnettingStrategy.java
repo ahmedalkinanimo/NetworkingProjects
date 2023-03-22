@@ -1,4 +1,5 @@
+import java.util.ArrayList;
 
 public interface SubnettingStrategy {
-	public void Subnet(); 
+	public ArrayList<String> Subnet(networkIPAddress netIp); 
 }
