@@ -1,0 +1,12 @@
+Network 01: 192.168.100.0/27
+   Broad Cast IP Address: 192.168.100.31
+   First IP Address: 192.168.100.1
+   Last IP Address: 192.168.100.30
+   # of Available Hosts: 30
+-----------------------------------------------------
+Network 02: 192.168.100.32/27
+   Broad Cast IP Address: 192.168.100.63
+   First IP Address: 192.168.100.33
+   Last IP Address: 192.168.100.62
+   # of Available Hosts: 30
+-----------------------------------------------------
