@@ -28,10 +28,28 @@ public class MainClass {
 				break;
 		}
 		networkIPAddress netIP=new networkIPAddress(new IPAddress(readIp));
-		System.out.println(netIP);
+		// System.out.println(netIP);
+		
+		int numberofHosts=10;
+		ArrayList<String> subnet1=new NetSegmentation(new FixedHostSubnettingStrategy(numberofHosts)).applySubnet(netIP);	
+		for(String temp : subnet1) {
+			System.out.println(temp);
+		}
 		
 		
-		ArrayList<String> subnets=new NetSegmentation(new FixedHostSubnettingStrategy()).applySubnet(netIP);	
+		int numberofSubNets=4;
+		ArrayList<String> subnet2=new NetSegmentation(new FixedNetworkSubnettingStrategy(numberofSubNets)).applySubnet(netIP);	
+		for(String temp : subnet2) {
+			System.out.println(temp);
+		}
+		
+		int[] HostsPerSubNet= {5,12,29,6};
+		ArrayList<String> subnet3=new NetSegmentation(new VLSMSubnettingStrategy(HostsPerSubNet)).applySubnet(netIP);	
+		for(String temp : subnet3) {
+			System.out.println(temp);
+		}
+		
+		
 		
 		in.close();
 	}
