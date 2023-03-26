@@ -95,4 +95,8 @@ public class networkIPAddress {
 		str+="\nLast Ip Address :"+this.lastIpAddress;
 		return str;
 	}
+	
+	public void setNetIpOctet(int netIpOctet, int ind) {
+		this.netIpOctet[ind] = netIpOctet;
+	}
 }

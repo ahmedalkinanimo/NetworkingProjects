@@ -31,33 +31,31 @@ public class MainClass {
 		networkIPAddress netIP=new networkIPAddress(new IPAddress(readIp));
 		// System.out.println(netIP);
 		
-		//int numberofHosts=10;
-		//ArrayList<String> subnet1=new NetSegmentation(new FixedHostSubnettingStrategy(numberofHosts)).applySubnet(netIP);	
-		//for(String temp : subnet1) {
-		//	System.out.println(temp);
-		//}
+		int numberofHosts=55;
+		ArrayList<String> subnet1=new NetSegmentation(new FixedHostSubnettingStrategy(numberofHosts)).applySubnet(netIP);	
+		for(String sub : subnet1) {
+			System.out.println(sub);
+		}
+		System.out.println("---------------------------------------------");
 		
-		
-		int numberofSubNets;
-		System.out.print("How Many sub networks? ");
-		numberofSubNets=in.nextInt();
+		int numberofSubNets=5;
 		ArrayList<String> subnet2=new NetSegmentation(new FixedNetworkSubnettingStrategy(numberofSubNets)).applySubnet(netIP);	
 		if(subnet2.size()==0) {
 			System.out.println("There are no subnets");
 		}
 		else{
 			System.out.println("the Subnets are:");
-			for(String temp : subnet2) {
-				System.out.println(temp);
+			for(String sub : subnet2) {
+				System.out.println(sub);
 			}
 		}
+		System.out.println("---------------------------------------------");
 		
-		//int[] HostsPerSubNet= {5,12,29,6};
-		//ArrayList<String> subnet3=new NetSegmentation(new VLSMSubnettingStrategy(HostsPerSubNet)).applySubnet(netIP);	
-		//for(String temp : subnet3) {
-		//	System.out.println(temp);
-		//}
-		
+		int[] HostsPerSubNet= {29,12,6,5};
+		ArrayList<String> subnet3=new NetSegmentation(new VLSMSubnettingStrategy(HostsPerSubNet)).applySubnet(netIP);	
+		for(String temp : subnet3) {
+			System.out.println(temp);
+		}
 		
 		in.close();
 	}
