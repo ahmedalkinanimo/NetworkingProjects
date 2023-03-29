@@ -9,7 +9,7 @@ public class IPAddress {
 	private String subnetMaskStr;					// subnet  address mask
 	
 	
-	public IPAddress(String ipInput) throws invalidIP { // ipInput is validated
+	public IPAddress(String ipInput){ // ipInput is validated
 		// Argument Constructor 
 		this.setIp(ipInput); 			// set the Entered (validated) IP address
 		this.setOctetsAndPrefix();		// prefix and octets of the entered IP address extraction
@@ -68,7 +68,7 @@ public class IPAddress {
 		return subnetMask;
 	}
 	
-	public static boolean validateIp(String ipInput) throws invalidIP {
+	public static boolean validateIp(String ipInput) {
 		// check for the format of the Entered IP address: aa.bb.cc.dd/ee
 		try {
 			String[] IpPrefix=ipInput.split("/");  // using'/' to split IP address
@@ -76,11 +76,11 @@ public class IPAddress {
 			//aa.bb.cc.dd & ee
 			
 			if(IpPrefix.length!=2)
-				throw new invalidIP("Invalid Entery for the IP address");
+				return false;
 			// checking if the prefix is acceptable
 			int pfx=Integer.parseInt(IpPrefix[1]); // if the entered prefix is nut numerical, NumberFormatException exception will be thrown 
 			if(pfx <0 || pfx >32) // checking of invalid numerical value
-				throw new invalidIP("Invalid Entery for the Prefix");
+				return false;
 			
 			
 			String[] Oct=IpPrefix[0].split("\\."); // using'.' to split IP address octets
@@ -88,28 +88,24 @@ public class IPAddress {
 			// aa, bb, cc, & dd
 			
 			if(Oct.length!=4)
-				throw new invalidIP("Invalid Entery for the IP address");
+				return false;
 			int ipOct;
 			for(int i=0;i<4;i++) {
 				ipOct=Integer.parseInt(Oct[i]);
 				if(ipOct <0 || ipOct >255)
-					throw new invalidIP("Invalid Entery for the octet "+ipOct);
+					return false;
 			}	
 			// if no exceptions are thrown, valid IP address
 			return true;	
 			
-		}catch(invalidIP e) {
-			System.out.println("An error occurred: " + e.getMessage());
-			return false;
 		}catch(NumberFormatException e) {
-			System.out.println("An error occurred: " + e.getMessage());
 			return false;
 		}	
 	}
 	
 	public String toString() {
 		// returns a string representation of an object (IP address) 
-		String str="Entered IP address: "+this.Ip;
+		String str=""+this.Ip;
 		return str;
 	}
 	

@@ -11,6 +11,7 @@ public class MainFrame extends JFrame{
 	 private JLabel inputLabel;
 	 private JLabel IpFormat;
 	 private JLabel subnet;
+	 private JLabel message;
 	 private JTextField inputField;
 	 private netButtons subnetCal, numOfSubnets, VLSM, hostsPSub;
 	 
@@ -23,11 +24,11 @@ public class MainFrame extends JFrame{
 	        setLayout(new BorderLayout());
 
 	        // Create the input field and label
-	        inputLabel = new JLabel("Enter IP Address:");
+	        inputLabel = new JLabel(" Enter IP Address:");
 	        inputLabel.setFont(font);
 	        inputField = new JTextField(20);
 	        inputField.setFont(font);
-	        IpFormat = new JLabel("Example: 192.168.100.117/24");
+	        IpFormat = new JLabel(" Example: 192.168.100.117/24");
 	        IpFormat.setFont(font);
 	        subnet = new JLabel("Subnet");
 	        subnet.setFont(font);
@@ -57,9 +58,16 @@ public class MainFrame extends JFrame{
 	        buttonPanel.add((Component) VLSM);
 	        add(buttonPanel, BorderLayout.CENTER);
 
+	        JPanel messagePanel = new JPanel();
+	        message= new JLabel("Copyright © 2023 Ahmed Alkinani - aaljanabi@kckcc.edu");
+	        Font font1 = new Font("Time New Roman", Font.ITALIC, 15);
+	        message.setFont(font1);
+	        messagePanel.add(message);
+	        add(messagePanel,BorderLayout.SOUTH);
+	        
 	        // Set up the window
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        setSize(500, 220);
+	        setSize(600, 250);
 	        setVisible(true);
 	        setLocationRelativeTo(null);
 	        setResizable(false);

@@ -99,4 +99,8 @@ public class networkIPAddress {
 	public void setNetIpOctet(int netIpOctet, int ind) {
 		this.netIpOctet[ind] = netIpOctet;
 	}
+	
+	public String getNetIp() {
+		return netIp;
+	}
 }
