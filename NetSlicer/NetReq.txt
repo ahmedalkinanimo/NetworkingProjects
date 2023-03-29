@@ -1,0 +1,11 @@
+The Given NetWork IP address: 192.1.48.0/20
+The Given Number of Required subnets: 8
+The IP Addresses of The Subnets are: 
+192.1.48.0/23
+192.1.50.0/23
+192.1.52.0/23
+192.1.54.0/23
+192.1.56.0/23
+192.1.58.0/23
+192.1.60.0/23
+192.1.62.0/23

@@ -1,0 +1,11 @@
+The Given NetWork IP address: 192.168.100.0/22
+The Given Number of Hosts for each subnet: [350, 200, 60, 25, 5, 4, 2]
+Subnetting the Given IP address will result in the creation of 7 different subnets.
+The IP Addresses of The Subnets are: 
+For 350 hosts, IP address is 192.168.100.0/23
+For 200 hosts, IP address is 192.168.102.0/24
+For 60 hosts, IP address is 192.168.103.0/26
+For 25 hosts, IP address is 192.168.103.64/27
+For 5 hosts, IP address is 192.168.103.96/29
+For 4 hosts, IP address is 192.168.103.104/29
+For 2 hosts, IP address is 192.168.103.112/30
