@@ -1,9 +1,16 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class VLSMSubnettingStrategy implements SubnettingStrategy {
 	private int[] numOhHostsPerSubNet;
 	
 	public VLSMSubnettingStrategy(int[] numOhHostsPerSubNet) {
+		Arrays.sort(numOhHostsPerSubNet);
+        for (int i = 0; i < numOhHostsPerSubNet.length / 2; i++) {
+            int temp = numOhHostsPerSubNet[i];
+            numOhHostsPerSubNet[i] = numOhHostsPerSubNet[numOhHostsPerSubNet.length - 1 - i];
+            numOhHostsPerSubNet[numOhHostsPerSubNet.length - 1 - i] = temp;
+        }
 		this.setNumOhHostsPerSubNet(numOhHostsPerSubNet);
 	}
 	

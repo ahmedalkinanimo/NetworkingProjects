@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /***
@@ -18,6 +19,8 @@ public class MainClass {
 
 	public static void main(String[] args) throws invalidIP {
 		// TODO Auto-generated method stub
+		MainFrame window=new MainFrame();
+		/*
 		Scanner in=new Scanner(System.in);
 		String readIp;
 		
@@ -31,15 +34,17 @@ public class MainClass {
 		networkIPAddress netIP=new networkIPAddress(new IPAddress(readIp));
 		// System.out.println(netIP);
 		
-		int numberofHosts=55;
+		int numberofHosts=40;
 		ArrayList<String> subnet1=new NetSegmentation(new FixedHostSubnettingStrategy(numberofHosts)).applySubnet(netIP);	
+		System.out.println(numberofHosts+" hosts for each netowrks");
 		for(String sub : subnet1) {
 			System.out.println(sub);
 		}
 		System.out.println("---------------------------------------------");
 		
-		int numberofSubNets=5;
+		int numberofSubNets=10;
 		ArrayList<String> subnet2=new NetSegmentation(new FixedNetworkSubnettingStrategy(numberofSubNets)).applySubnet(netIP);	
+		System.out.println(numberofSubNets+" subnets");
 		if(subnet2.size()==0) {
 			System.out.println("There are no subnets");
 		}
@@ -51,13 +56,15 @@ public class MainClass {
 		}
 		System.out.println("---------------------------------------------");
 		
-		int[] HostsPerSubNet= {29,12,6,5};
+		int[] HostsPerSubNet= {55,29,12,6,5};
 		ArrayList<String> subnet3=new NetSegmentation(new VLSMSubnettingStrategy(HostsPerSubNet)).applySubnet(netIP);	
+		System.out.println(Arrays.toString(HostsPerSubNet)+" hosts for each netowrks");
 		for(String temp : subnet3) {
 			System.out.println(temp);
 		}
 		
 		in.close();
+		*/
 	}
 
 }
