@@ -11,7 +11,7 @@ public class FixedNetworkSubnettingStrategy implements SubnettingStrategy{
 		ArrayList<String> subnets=new ArrayList<String>();
 		int borrowedBits=(int) Math.ceil(Math.log(numOfSubNets)/Math.log(2));
 		if(borrowedBits>=(32-netIp.getPrefix())-1) {
-			System.out.println("if "+borrowedBits+" bits are borrowed form the Host Portion ("+(32-netIp.getPrefix())+ " bits). No bits are left for the host portion");
+			//System.out.println("if "+borrowedBits+" bits are borrowed form the Host Portion ("+(32-netIp.getPrefix())+ " bits). No bits are left for the host portion");
 			return subnets;
 		}		
 		int newPrefix=netIp.getPrefix()+borrowedBits;	

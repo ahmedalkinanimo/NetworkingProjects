@@ -1,4 +1,3 @@
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -8,6 +7,10 @@ import javax.swing.SwingConstants;
 import java.awt.*;
 
 public class MainFrame extends JFrame{
+	 /**
+	 * 
+	 */
+	 private static final long serialVersionUID = 1L;
 	 private JLabel inputLabel;
 	 private JLabel IpFormat;
 	 private JLabel subnet;

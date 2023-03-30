@@ -21,7 +21,7 @@ public class VLSMSubnettingStrategy implements SubnettingStrategy {
 		  int subnetHosts = numOhHostsPerSubNet[hostInd];	
 		  int keptBits=(int) Math.ceil(Math.log(subnetHosts+2)/Math.log(2));	  		   
 		  if(keptBits>=hostPortion) {
-				System.out.println("not enough addresses for subnet with " + subnetHosts + " hosts");
+				//System.out.println("not enough addresses for subnet with " + subnetHosts + " hosts");
 		  }else {
 			  subnets=Subnet(hostInd,subnets, netIp); 
 		  }
@@ -54,7 +54,10 @@ public class VLSMSubnettingStrategy implements SubnettingStrategy {
 		  }
 		  for(int j=0;j<4;j++) {
 			  netIp.setNetIpOctet(netIp.getNetIpOctet()[j]+maskMod[3-j],j);
+			  if(netIp.getNetIpOctet()[j]>=255)
+				  return subnets;
 		  }
+		  
 		  return Subnet(hostInd,subnets,netIp); 
 	  }
 	

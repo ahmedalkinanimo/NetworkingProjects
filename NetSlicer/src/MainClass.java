@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
 
 /***
  * 
@@ -20,6 +17,7 @@ public class MainClass {
 	public static void main(String[] args) throws invalidIP {
 		// TODO Auto-generated method stub
 		MainFrame window=new MainFrame();
+		
 	}
 
 }

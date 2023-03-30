@@ -13,7 +13,7 @@ public class FixedHostSubnettingStrategy implements SubnettingStrategy{
 			int keptBits=(int) Math.ceil(Math.log(numOfHosts+2)/Math.log(2));
 					
 			if(keptBits>=hostPortion) {
-				System.out.println("Error: not enough addresses for subnet with " + numOfHosts + " hosts");
+				//System.out.println("Error: not enough addresses for subnet with " + numOfHosts + " hosts");
 				return subnets;
 			}
 			int borrowedBits=hostPortion-keptBits;

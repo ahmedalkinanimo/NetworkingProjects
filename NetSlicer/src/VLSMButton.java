@@ -13,6 +13,10 @@ import java.util.Comparator;
 
 public class VLSMButton extends JButton implements netButtons{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField inputField;
 	
 	public VLSMButton(JTextField inputField) {
@@ -43,12 +47,14 @@ public class VLSMButton extends JButton implements netButtons{
 				
 				ArrayList<String> subnet2=new NetSegmentation(new VLSMSubnettingStrategy(sortedArr)).applySubnet(netIP);	
 				if(subnet2.size()==0) {
-					JOptionPane.showMessageDialog(null,"There are NO subnets","No Subnets", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,"It's impossible to complete the task with the given information","No Subnets", JOptionPane.ERROR_MESSAGE);
 				}
 				else{
 					PrintWriter writer = new PrintWriter("HostReq.txt", "UTF-8");		          
 		            writer.println("The Given NetWork IP address: "+netIP.getNetIp()+"/"+netIP.getPrefix());
 		            writer.println("The Given Number of Hosts for each subnet: "+Arrays.toString(sortedArr));
+		            if(subnet2.size()<sortedArr.length)
+		            	writer.println("By using the given information, It's impossible to create "+sortedArr.length+" subnets");
 		            writer.println("Subnetting the Given IP address will result in the creation of "+subnet2.size()+" different subnets.");
 		            writer.println("The IP Addresses of The Subnets are: ");
 		            int counter=0;

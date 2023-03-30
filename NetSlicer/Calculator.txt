@@ -1,7 +1,7 @@
-Entered IP address: 192.1.54.12/20
-Network Ip address :192.1.48.0/20
-Subnet mask: 255.255.240.0
-Number of Hosts :4094
-Borad Cast Ip Address :192.1.63.255
-First Ip Address :192.1.48.1
-Last Ip Address :192.1.63.254
+Entered IP address: 192.168.100.195/22
+Network Ip address :192.168.100.0/22
+Subnet mask: 255.255.252.0
+Number of Hosts :1022
+Borad Cast Ip Address :192.168.103.255
+First Ip Address :192.168.100.1
+Last Ip Address :192.168.103.254

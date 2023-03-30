@@ -10,6 +10,10 @@ import java.io.PrintWriter;
 
 public class calculatorButton extends JButton implements netButtons{
 		
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField inputField;
 	
 	public calculatorButton(JTextField inputField) {

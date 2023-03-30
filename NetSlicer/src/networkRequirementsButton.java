@@ -11,6 +11,10 @@ import java.util.ArrayList;
 
 public class networkRequirementsButton extends JButton implements netButtons{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField inputField;
 	
 	public networkRequirementsButton(JTextField inputField) {
@@ -33,7 +37,7 @@ public class networkRequirementsButton extends JButton implements netButtons{
 				int numberofSubNets=Integer.parseInt(userInput);
 				ArrayList<String> subnet2=new NetSegmentation(new FixedNetworkSubnettingStrategy(numberofSubNets)).applySubnet(netIP);	
 				if(subnet2.size()==0) {
-					JOptionPane.showMessageDialog(null,"There are NO subnets","No Subnets", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,"It's impossible to complete the task with the given information","No Subnets", JOptionPane.ERROR_MESSAGE);
 				}
 				else{
 					PrintWriter writer = new PrintWriter("NetReq.txt", "UTF-8");		          
